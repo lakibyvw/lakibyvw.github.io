@@ -1,37 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Laki Café & Pet Hotel</title>
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; background:#111; color:#eee; line-height:1.6; }
+    header, section, footer { padding: 2rem; max-width: 900px; margin:auto; }
+    h1,h2,h3 { color:#ffd166; }
+    nav { background:#222; padding:1rem; text-align:center; }
+    nav a { color:#ffd166; margin:0 1rem; text-decoration:none; }
+    .btn { display:inline-block; margin:0.5rem; padding:0.7rem 1.2rem; border-radius:5px; text-decoration:none; }
+    .primary { background:#ffd166; color:#111; }
+    .secondary { border:1px solid #ffd166; color:#ffd166; }
+    table { width:100%; border-collapse:collapse; margin:1rem 0; }
+    table th, table td { border:1px solid #555; padding:0.5rem; text-align:left; }
+    .grid { display:grid; gap:1rem; }
+    .gallery { grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); }
+    .gallery img { width:100%; border-radius:10px; }
+    .map { width:100%; height:300px; border:0; margin-top:1rem; }
+    footer { text-align:center; font-size:0.9rem; background:#222; margin-top:2rem; }
+  </style>
 </head>
 <body>
-  <!-- Other sections above remain unchanged -->
 
-  <!-- Rates Section -->
+  <!-- Navigation -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#rates">Rates</a>
+    <a href="#rules">House Rules</a>
+    <a href="#hours">Hours & Location</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- Hero -->
+  <header>
+    <h1>🐾 Laki Café & Pet Hotel</h1>
+    <p>A cozy café for humans — and a happy place for pets.</p>
+    <a class="btn primary" href="https://wa.me/60163492861" target="_blank" rel="noopener">WhatsApp to Book</a>
+    <a class="btn secondary" href="https://instagram.com/lakibyvw" target="_blank" rel="noopener">@lakibyvw</a>
+  </header>
+
+  <!-- About -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Laki Café & Pet Hotel in Melaka is inspired by Kiki & Lala 🐶. We are a plant-friendly, pet-friendly café with separated zones for pet lovers and those who prefer a quiet corner. Upstairs, we provide daycare and a boutique pet hotel.</p>
+  </section>
+
+  <!-- Services -->
+  <section id="services">
+    <h2>Services</h2>
+    <ul>
+      <li>☕ Café with pet and non-pet zones</li>
+      <li>🏡 Pet Daycare (11am–8pm)</li>
+      <li>🛏️ Pet Hotel (private rooms for dogs & cats)</li>
+      <li>✂️ Grooming (coming soon)</li>
+    </ul>
+  </section>
+
+  <!-- Rates -->
   <section id="rates">
-    <div class="container">
-      <h2>🐾 Rates</h2>
+    <h2>🐾 Rates</h2>
 
-      <h3>🐶 Dog Hotel</h3>
-      <table>
-        <tr><th>Room</th><th>Rate</th></tr>
-        <tr><td>Standard room (per day)</td><td>RM45</td></tr>
-        <tr><td>2 family dogs share (per day)</td><td>RM75</td></tr>
-        <tr><td>Stay &gt; 5 days</td><td>10% off</td></tr>
-      </table>
+    <h3>🐶 Dog Hotel</h3>
+    <table>
+      <tr><th>Room</th><th>Rate</th></tr>
+      <tr><td>Standard room (per day)</td><td>RM45</td></tr>
+      <tr><td>2 family dogs share (per day)</td><td>RM75</td></tr>
+      <tr><td>Stay > 5 days</td><td>10% off</td></tr>
+    </table>
 
-      <h3>🐱 Cat Boarding</h3>
-      <table>
-        <tr><th>Room</th><th>Rate</th></tr>
-        <tr><td>Single cat</td><td>RM35</td></tr>
-        <tr><td>Two cats (same household)</td><td>RM60</td></tr>
-        <tr><td>Stay &gt; 5 days</td><td>10% off</td></tr>
-      </table>
+    <h3>🐱 Cat Boarding</h3>
+    <table>
+      <tr><th>Room</th><th>Rate</th></tr>
+      <tr><td>Single cat</td><td>RM35</td></tr>
+      <tr><td>Two cats (same household)</td><td>RM60</td></tr>
+      <tr><td>Stay > 5 days</td><td>10% off</td></tr>
+    </table>
+  </section>
+
+  <!-- House Rules -->
+  <section id="rules">
+    <h2>House Rules</h2>
+    <ul>
+      <li>Bring vaccination records for pets staying in hotel/daycare.</li>
+      <li>Pets must be on leash in café areas.</li>
+      <li>No aggressive pets for the safety of others.</li>
+    </ul>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="grid gallery">
+      <img src="images/cafe1.jpg" alt="Inside Laki Café">
+      <img src="images/dog1.jpg" alt="Dog at Laki">
+      <img src="images/food1.jpg" alt="Signature dish">
+      <img src="images/cat1.jpg" alt="Cat boarding area">
     </div>
   </section>
 
-  <!-- Other sections below remain unchanged -->
+  <!-- Hours & Location -->
+  <section id="hours">
+    <h2>Hours & Location</h2>
+    <table>
+      <tr><td><strong>Café</strong></td><td>10:00 – 21:00</td></tr>
+      <tr><td><strong>Daycare</strong></td><td>11:00 – 20:00</td></tr>
+      <tr><td><strong>Pet Hotel</strong></td><td>Check-in/out by appointment</td></tr>
+      <tr><td><strong>Address</strong></td><td>11, BLOK A, JLN PB4, PLAZA BACHANG, 75250 MELAKA</td></tr>
+      <tr><td><strong>Phone</strong></td><td><a href="tel:+60163492861">+60 16-349 2861</a></td></tr>
+    </table>
+    <a class="btn secondary" href="https://maps.google.com/?q=11%2C%20BLOK%20A%2C%20JLN%20PB4%2C%20PLAZA%20BACHANG%2C%2075250%20MELAKA" target="_blank" rel="noopener">Open in Google Maps</a>
+    <iframe class="map" loading="lazy" allowfullscreen src="https://www.google.com/maps?q=11%2C%20BLOK%20A%2C%20JLN%20PB4%2C%20PLAZA%20BACHANG%2C%2075250%20MELAKA&output=embed"></iframe>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>📞 <a href="tel:+60163492861">+60 16-349 2861</a></p>
+    <p>📱 <a href="https://wa.me/60163492861" target="_blank" rel="noopener">WhatsApp us</a></p>
+    <p>📸 <a href="https://instagram.com/lakibyvw" target="_blank" rel="noopener">@lakibyvw</a></p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© <span id="year"></span> Laki Café & Pet Hotel · Melaka</p>
+    <p>Made with ❤ for pets & people</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
