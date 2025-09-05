@@ -1,81 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Laki Café & Pet Hotel · Melaka</title>
+
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #1c1c1c;
-      color: #f5f5f5;
-      margin: 0;
-      padding: 0;
-      text-align: center;
+    :root{
+      --bg:#151515;
+      --bg2:#1b1b1b;
+      --card:#2a2a2a;
+      --text:#f5f5f5;
+      --muted:#cfcfcf;
+      --brand:#ffd166;       /* gold */
+      --brand-2:#ffcc66;
+      --border:#444;
+      --shadow:0 6px 16px rgba(0,0,0,.45);
     }
-    nav {
-      background-color: #111;
-      padding: 15px;
+
+    /* Base */
+    html,body{margin:0;padding:0}
+    body{
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background: radial-gradient(1200px 600px at 50% -10%, #1f1f1f, var(--bg));
+      line-height:1.55;
     }
-    nav a {
-      color: #ffcc33;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
+    a{color:var(--brand)}
+    h1,h2,h3{margin:0 0 .6rem}
+    h1{font-size:clamp(28px, 4vw, 44px); color:var(--brand)}
+    h2{font-size:clamp(22px, 3vw, 32px); color:var(--brand)}
+    h3{font-size:clamp(18px, 2.2vw, 22px); color:var(--brand-2)}
+
+    /* Nav */
+    nav{
+      position:sticky; top:0; z-index:10;
+      background:#111; border-bottom:1px solid #222;
+      display:flex; flex-wrap:wrap; gap:16px;
+      justify-content:center; padding:14px 16px;
     }
-    nav a:hover {
-      text-decoration: underline;
+    nav a{
+      color:var(--brand);
+      text-decoration:none; font-weight:700; letter-spacing:.2px;
+      padding:4px 6px; border-radius:6px;
     }
-    .logo {
-      display: block;
-      margin: 20px auto;
-      width: 160px;
-      height: auto;
+    nav a:hover{ background:#1f1f1f }
+
+    /* Layout helpers */
+    .container{ max-width:1000px; margin:0 auto; padding:0 18px }
+    section{ padding:40px 0 }
+
+    /* Hero */
+    header#top{ text-align:center; padding:36px 0 16px }
+    .logo{
+      display:block; margin:16px auto 14px;
+      width:min(260px, 60vw); height:auto; border-radius:0; /* square */
+      box-shadow:var(--shadow);
     }
-    h1 {
-      color: #ffcc33;
+    .tagline{ color:#e9e9e9; margin:.4rem 0 1rem }
+    .btn-group{ display:flex; flex-wrap:wrap; gap:14px; justify-content:center; margin:10px 0 8px }
+
+    .btn{
+      display:inline-block; text-decoration:none; font-weight:700;
+      padding:12px 18px; border-radius:12px; border:2px solid var(--brand);
+      color:var(--text); background:transparent; transition:.15s transform ease, .15s box-shadow ease;
     }
-    .btn-group {
-      margin: 20px 0;
+    .btn:hover{ transform:translateY(-2px); box-shadow:var(--shadow) }
+    .btn.primary{ background:var(--brand); color:#1b1b1b; border-color:var(--brand) }
+
+    /* Services & Rates (cards) */
+    #services-rates .grid{
+      display:flex; flex-wrap:wrap; gap:20px; justify-content:center;
     }
-    .btn {
-      display: inline-block;
-      margin: 10px;
-      padding: 12px 24px;
-      border: 2px solid #ffcc33;
-      border-radius: 8px;
-      color: #f5f5f5;
-      text-decoration: none;
-      font-weight: bold;
+    .card{
+      background:var(--card); border:1px solid var(--border);
+      border-radius:12px; box-shadow:var(--shadow);
+      padding:20px; flex:1 1 420px; min-width:300px;
     }
-    .btn.primary {
-      background-color: #ffcc33;
-      color: #1c1c1c;
+    .card ul{ padding-left:20px; margin:.2rem 0 }
+    .card li{ margin:.25rem 0 }
+
+    /* House rules list */
+    #rules ul{ padding-left:20px }
+    #rules li{ margin:.35rem 0 }
+
+    /* Map embed */
+    .map-wrap{
+      position:relative; padding-bottom:56.25%; height:0;
+      overflow:hidden; border-radius:12px; box-shadow:var(--shadow); margin-top:14px;
     }
-    section {
-      padding: 40px 20px;
-      max-width: 800px;
-      margin: auto;
-      text-align: left;
+    .map-wrap iframe{ position:absolute; top:0; left:0; width:100%; height:100%; border:0 }
+
+    /* Footer */
+    footer{
+      background:#111; color:#bdbdbd;
+      text-align:center; padding:22px 16px; margin-top:20px; font-size:14px;
+      border-top:1px solid #222;
     }
-    h2 {
-      color: #ffcc33;
-    }
-    footer {
-      background: #111;
-      color: #aaa;
-      padding: 20px;
-      font-size: 14px;
-    }
-    /* Small screens */
-    @media (max-width: 520px) {
-      nav a {
-        display: block;
-        margin: 10px 0;
-      }
-      .logo {
-        width: 120px;
-      }
+
+    /* Mobile tweaks */
+    @media (max-width:520px){
+      .btn{ width:100%; text-align:center }
+      header#top{ padding:28px 0 4px }
+      .logo{ width:min(200px, 70vw) }
     }
   </style>
 </head>
@@ -85,6 +112,7 @@
   <nav>
     <a href="#about">About</a>
     <a href="#services">Services</a>
+    <!-- Menu link right after Services -->
     <a href="http://qro.masterpanel.net/V2/app.php?id=ss&s=314&t=9383968f-8c52-11ef-8b32-06853c758d61" target="_blank" rel="noopener">Menu</a>
     <a href="#rates">Rates</a>
     <a href="#rules">House Rules</a>
@@ -93,59 +121,66 @@
   </nav>
 
   <!-- HERO -->
-  <header id="top">
+  <header id="top" class="container">
     <img src="images/laki-logo.png" alt="Laki Café & Pet Hotel logo" class="logo">
-    <h1>🐾 Laki Café & Pet Hotel · Melaka</h1>
-    <p>A cozy café for humans — and a happy place for pets.</p>
+    <h1>Laki Café & Pet Hotel · Melaka</h1>
+    <p class="tagline">A cozy café for humans — and a happy place for pets.</p>
+
     <div class="btn-group">
-      <a class="btn primary" href="https://wa.me/60163492861" target="_blank">WhatsApp to Book</a>
-      <a class="btn" href="https://www.facebook.com/lakibyvw" target="_blank">Facebook</a>
-      <a class="btn" href="https://www.tiktok.com/@winston_kikilala" target="_blank">TikTok</a>
-      <a class="btn" href="https://instagram.com/lakibyvw" target="_blank">Instagram (Laki by VW)</a>
-      <a class="btn" href="https://instagram.com/kikilalathepom" target="_blank">Instagram (Kiki & Lala)</a>
-      <a class="btn" href="https://youtube.com/@laki11111" target="_blank">YouTube</a>
-      <a class="btn primary" href="http://qro.masterpanel.net/V2/app.php?id=ss&s=314&t=9383968f-8c52-11ef-8b32-06853c758d61" target="_blank">📄 View Menu</a>
+      <a class="btn primary" href="https://wa.me/60163492861" target="_blank" rel="noopener">WhatsApp to Book</a>
+      <a class="btn" href="https://www.facebook.com/lakibyvw" target="_blank" rel="noopener">Facebook</a>
+      <a class="btn" href="https://www.tiktok.com/@winston_kikilala" target="_blank" rel="noopener">TikTok</a>
+      <a class="btn" href="https://instagram.com/lakibyvw" target="_blank" rel="noopener">Instagram (Laki by VW)</a>
+      <a class="btn" href="https://instagram.com/kikilalathepom" target="_blank" rel="noopener">Instagram (Kiki & Lala)</a>
+      <a class="btn" href="https://youtube.com/@laki11111" target="_blank" rel="noopener">YouTube</a>
+      <!-- Big gold menu button -->
+      <a class="btn primary" href="http://qro.masterpanel.net/V2/app.php?id=ss&s=314&t=9383968f-8c52-11ef-8b32-06853c758d61" target="_blank" rel="noopener">📄 View Menu</a>
     </div>
   </header>
 
   <!-- ABOUT -->
-  <section id="about">
+  <section id="about" class="container">
     <h2>About Us</h2>
     <p>
-      Laki Café & Pet Hotel in Melaka is inspired by Kiki & Lala 🐶🐶 and Lily 🐱. 
+      Laki Café & Pet Hotel in Melaka is inspired by Kiki & Lala 🐶🐶 and Lily 🐱.
       We are a plant-friendly, pet-friendly café with separated zones for pet lovers and those who prefer a quiet corner.
     </p>
   </section>
 
-  <!-- SERVICES -->
-  <section id="services">
-    <h2>Services</h2>
-    <ul>
-      <li>☕ Café with pet and non-pet zones</li>
-      <li>🏠 Pet Daycare (11am–8pm)</li>
-      <li>🐾 Pet Hotel (private rooms for dogs & cats)</li>
-    </ul>
-  </section>
+  <!-- SERVICES + RATES as Cards/Columns -->
+  <section id="services-rates" class="container">
+    <div class="grid">
+      <!-- Services -->
+      <div id="services" class="card">
+        <h2>Services</h2>
+        <ul>
+          <li>☕ Café with pet and non-pet zones</li>
+          <li>🏡 Pet Daycare (11am–8pm)</li>
+          <li>🐶🐱 Pet Hotel (private rooms for dogs & cats)</li>
+        </ul>
+      </div>
 
-  <!-- RATES -->
-  <section id="rates">
-    <h2>Rates</h2>
-    <h3>🐶 Dog Hotel</h3>
-    <ul>
-      <li>Standard room (per day): RM45</li>
-      <li>2 family dogs share (per day): RM75</li>
-      <li>Stay > 5 days: 10% off</li>
-    </ul>
-    <h3>🐱 Cat Boarding</h3>
-    <ul>
-      <li>Single cat: RM35</li>
-      <li>Two cats (same household): RM60</li>
-      <li>Stay > 5 days: 10% off</li>
-    </ul>
+      <!-- Rates -->
+      <div id="rates" class="card">
+        <h2>Rates</h2>
+        <h3>🐶 Dog Hotel</h3>
+        <ul>
+          <li>Standard room (per day): <strong>RM45</strong></li>
+          <li>2 family dogs share (per day): <strong>RM75</strong></li>
+          <li>Stay &gt; 5 days: <strong>10% off</strong></li>
+        </ul>
+        <h3>🐱 Cat Boarding</h3>
+        <ul>
+          <li>Single cat: <strong>RM35</strong></li>
+          <li>Two cats (same household): <strong>RM60</strong></li>
+          <li>Stay &gt; 5 days: <strong>10% off</strong></li>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <!-- HOUSE RULES -->
-  <section id="rules">
+  <section id="rules" class="container">
     <h2>House Rules</h2>
     <ul>
       <li>Bring vaccination records for pets staying in hotel/daycare.</li>
@@ -154,8 +189,8 @@
     </ul>
   </section>
 
-  <!-- HOURS -->
-  <section id="hours">
+  <!-- HOURS & LOCATION (with embedded Google Map) -->
+  <section id="hours" class="container">
     <h2>Hours & Location</h2>
     <p><strong>Address:</strong><br>
       11, BLOK A, JLN PB4, PLAZA BACHANG, 75250 MELAKA, Melaka
@@ -164,21 +199,30 @@
       Daily 10am – 9pm<br>
       Thursday Closed
     </p>
-    <p>
-      <a href="https://maps.google.com/?q=11,+BLOK+A,+JLN+PB4,+PLAZA+BACHANG,+75250+MELAKA" target="_blank" class="btn">📍 View on Google Maps</a>
+
+    <p style="margin:.3rem 0 1rem">
+      <a class="btn" href="https://maps.google.com/?q=11,+BLOK+A,+JLN+PB4,+PLAZA+BACHANG,+75250+MELAKA" target="_blank" rel="noopener">📍 View on Google Maps</a>
     </p>
+
+    <!-- Embedded Google Map -->
+    <div class="map-wrap">
+      <iframe
+        src="https://www.google.com/maps?q=11%2C%20BLOK%20A%2C%20JLN%20PB4%2C%20PLAZA%20BACHANG%2C%2075250%20MELAKA&hl=en&z=16&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen></iframe>
+    </div>
   </section>
 
   <!-- CONTACT -->
-  <section id="contact">
+  <section id="contact" class="container">
     <h2>Contact Us</h2>
-    <p>📞 WhatsApp: <a href="https://wa.me/60163492861" target="_blank">016-3492861</a></p>
+    <p>📞 WhatsApp: <a href="https://wa.me/60163492861" target="_blank" rel="noopener">016-3492861</a></p>
     <p>Email: <a href="mailto:info@lakibyvw.com">info@lakibyvw.com</a></p>
   </section>
 
   <footer>
-    <p>© 2025 Laki Café & Pet Hotel · Melaka</p>
+    © 2025 Laki Café & Pet Hotel · Melaka
   </footer>
-
 </body>
 </html>
