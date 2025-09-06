@@ -2,12 +2,23 @@
 layout: default
 title: Laki Blog
 ---
-<h1 style="margin:24px 0">🐾 Laki Blog</h1>
-<ul>
-  {% for post in site.posts %}
-    <li style="margin:8px 0">
-      <a href="{{ post.url }}">{{ post.title }}</a>
-      — {{ post.date | date: "%Y-%m-%d" }}
-    </li>
-  {% endfor %}
-</ul>
+
+<main style="max-width:960px;margin:40px auto;padding:0 16px">
+  <h1 style="font-size:2rem;margin:8px 0 24px;text-align:center">🐾 Laki Blog</h1>
+  <div style="display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
+    {% for post in site.posts %}
+      <article style="background:#111;border:1px solid #333;border-radius:12px;padding:16px;box-shadow:0 4px 8px rgba(0,0,0,0.2)">
+        {% if post.cover %}
+          <img src="{{ post.cover }}" alt="" style="width:100%;height:auto;border-radius:10px;margin-bottom:12px">
+        {% endif %}
+        <h2 style="margin:0 0 8px;font-size:1.2rem"><a href="{{ post.url }}" style="color:#ffe14a;text-decoration:none">{{ post.title }}</a></h2>
+        <div style="font-size:.9rem;opacity:.75;margin-bottom:10px">
+          {{ post.date | date: "%-d %b %Y" }}
+        </div>
+        <p>{{ post.excerpt | strip_html | truncate: 120 }}</p>
+        <a href="{{ post.url }}" style="display:inline-block;margin-top:10px;padding:8px 14px;border-radius:8px;background:#ffe14a;color:#000;text-decoration:none;font-weight:bold">Read More</a>
+      </article>
+    {% endfor %}
+  </div>
+</main>
+
