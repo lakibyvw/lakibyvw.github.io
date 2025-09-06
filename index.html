@@ -148,17 +148,67 @@
     </p>
   </section>
 
-  <!-- VIDEO -->
-  <section id="about-video" class="container">
-    <div class="video-wrap">
-      <iframe src="https://www.youtube.com/embed/0GA-XuxoKgY"
+<!-- VIDEO + PHOTOS -->
+<section id="about-video" class="container">
+  <div class="media-wrap">
+    <!-- 左边的照片 -->
+    <div class="media-item photo">
+      <img src="images/photo1.jpeg" alt="Photo 1">
+    </div>
+
+    <!-- 中间的视频 -->
+    <div class="media-item video">
+      <iframe
+        src="https://www.youtube.com/embed/0GA-XuxoKgY"
         title="Laki Café & Pet Hotel Video"
         frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-      </iframe>
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
     </div>
-  </section>
+
+    <!-- 右边的照片 -->
+    <div class="media-item photo">
+      <img src="images/photo2.jpeg" alt="Photo 2">
+    </div>
+  </div>
+</section>
+
+<style>
+  /* 包裹三栏的容器 */
+  .media-wrap {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .media-item {
+    flex: 1;
+  }
+
+  .media-item.video iframe {
+    width: 100%;
+    aspect-ratio: 9 / 16;  /* 如果是横屏视频改成 16 / 9 */
+    height: auto;
+    border-radius: 12px;
+  }
+
+  .media-item.photo img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+
+  /* 手机版自动上下堆叠 */
+  @media (max-width: 768px) {
+    .media-wrap {
+      flex-direction: column;
+    }
+  }
+</style>
 
   <!-- SERVICES + RATES -->
   <section id="services-rates" class="container grid">
