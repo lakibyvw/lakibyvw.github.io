@@ -1,0 +1,6 @@
+title: "Laki Café & Pet Hotel"
+description: "A cozy café for humans — and a happy place for pets"
+markdown: kramdown
+permalink: /blog/:title/
+url: "https://lakibyvw.com"
+baseurl: ""
