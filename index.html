@@ -175,7 +175,6 @@
 </section>
 
 <style>
-  /* 包裹三栏的容器 */
   .media-wrap {
     display: flex;
     gap: 16px;
@@ -190,7 +189,7 @@
 
   .media-item.video iframe {
     width: 100%;
-    aspect-ratio: 9 / 16;  /* 如果是横屏视频改成 16 / 9 */
+    aspect-ratio: 9 / 16;  /* Shorts: 9/16, Normal video: 16/9 */
     height: auto;
     border-radius: 12px;
   }
@@ -202,7 +201,6 @@
     object-fit: cover;
   }
 
-  /* 手机版自动上下堆叠 */
   @media (max-width: 768px) {
     .media-wrap {
       flex-direction: column;
